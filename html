@@ -22,6 +22,11 @@
             if (password === correctPassword) {
                 document.getElementById("protected-content").style.display = "block";
                 document.getElementById("password-form").style.display = "none";
+                
+                // Add the success message text
+                var successMessage = document.createElement("p");
+                successMessage.textContent = "Password accepted! You can view the content below.";
+                document.body.appendChild(successMessage);
             } else {
                 alert("Incorrect password. Please try again.");
             }
@@ -37,7 +42,7 @@
 
     <div id="protected-content">
         <h2>Protected Content</h2>
-        <img src="your-picture-file.jpg" alt="Your Image">
+        <p>This is the content that is shown after the correct password is entered.</p>
         <p>Don't Scan It</p>
     </div>
 </body>
