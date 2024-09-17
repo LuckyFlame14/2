@@ -9,21 +9,39 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
+            background-color: black; /* Set the background to black */
+            color: white; /* Set the text color to white */
         }
         #protected-content {
             display: none;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white; /* Button background */
+            color: black; /* Button text color */
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ddd; /* Button hover effect */
         }
     </style>
     <script>
         function checkPassword() {
             var password = document.getElementById("password").value;
-            var correctPassword = "Lena"; // Replace with your password
+            var correctPassword = "Lena"; // Password set to "Lena"
 
             if (password === correctPassword) {
                 document.getElementById("protected-content").style.display = "block";
                 document.getElementById("password-form").style.display = "none";
                 
-                // Add the success message text
+                // Add success message
                 var successMessage = document.createElement("p");
                 successMessage.textContent = "Password accepted! You can view the content below.";
                 document.body.appendChild(successMessage);
@@ -36,6 +54,7 @@
 <body>
     <div id="password-form">
         <h2>Enter Password</h2>
+        <!-- Input field for the password -->
         <input type="password" id="password" placeholder="Enter Password">
         <button onclick="checkPassword()">Submit</button>
     </div>
@@ -43,7 +62,7 @@
     <div id="protected-content">
         <h2>Protected Content</h2>
         <p>This is the content that is shown after the correct password is entered.</p>
-        <p>here</p>
+        <p>Don't Scan It</p>
     </div>
 </body>
 </html>
